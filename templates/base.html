@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+  <head>
+      <title>Mysite - Home</title>
+      {% include 'parciais/_head.html' %}
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand"><img src="{% static 'polls/images/final20.png' %}" alt="" href="/">da AABB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="videos">Vídeos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="eventos">Eventos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="galeria">Galeria</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="blog">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contato">Contato</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  {% include 'parciais/_courosel.html' %}
+  <br>
+  <br>
+  <body style="background-color: #f9f9f9">
+      <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+        {% block conteudo %} {% endblock %}
+      </div>
+      <footer>
+          {% include 'parciais/_footer.html' %}
+      </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/popper.min.js' %}"></script>
+  </body>
+</html>

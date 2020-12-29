@@ -1,0 +1,35 @@
+{% load static %}
+{% load bootstrap4%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Imagem</title>
+    {% include 'parciais/_head.html' %}
+</head>
+<br>
+<br>
+<body style="background-color: #f9f9f9;">
+    <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+        <center>
+            <h4>Imagem:</h4>
+        </center>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="card mt-1 shadow-lg p-3 mb-5 bg-white rounded">
+                    <table class="table table-striped">
+                        {% bootstrap_messages %}
+                        <form action="{% url 'foto' %}" method="post" class="form" autocomplete="off" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                            {% buttons %}
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            {% endbuttons %}
+                        </form>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+        {% bootstrap_javascript jquery='full' %}
+</body>
+</html>

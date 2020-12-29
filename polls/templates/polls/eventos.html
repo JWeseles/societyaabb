@@ -1,0 +1,113 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Mysite - Eventos</title>
+      {% include 'parciais/_head.html' %}
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand"><img src="{% static 'polls/images/final20.png' %}" alt="" href="/">da AABB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/videos">Vídeos<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Eventos<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/galeria">Galeria<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog">Blog<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contato">Contato<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <body style="background-color: #f9f9f9;">
+        <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+              <center><p><h5>Programação dos Eventos agendados:</h5></center>
+              <div class="row">
+                 <div class="col-12 col-md-3"></div>
+                      <div class="col-12 col-md-6">
+                            <div class="card mt-1 shadow-lg p-3 mb-5 bg-white rounded">
+                              <table class="table table-striped">
+                                  <thead>
+                                        <tr>
+                                          {% if reserva %}
+                                            <table class="table">
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">#</th>
+                                                      <th scope="col">Título</th>
+                                                      <th scope="col">Nome</th>
+                                                      <th scope="col">Data</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    {% for evento in reserva  %}
+                                                        <tr>
+                                                            <td scope="row">{{ evento.id }}</td>
+                                                            <td scope="row"><a href="#modal{{evento.id}}" data-toggle="modal">{{ evento.titulo }}</a></td>
+                                                            <td scope="row">{{ evento.autor }}</td>
+                                                            <td scope="row">{{ evento.data_criacao }}</td>
+                                                        </tr>
+                                                                           <!-- Button trigger modal -->
+
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="modal{{evento.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                          <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                              <div class="modal-header">
+
+                                                                  <h5 class="modal-title" id="exampleModalLabel">{{ evento.titulo }}</h5>
+
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                  <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                              </div>
+                                                              <div class="modal-body">
+                                                                  <center>
+                                                                   <img src="{{ evento.imagem.url }}" style="max-width:300px;
+                                                                   height:auto;" class="img-fluid" alt="{{foto.titulo}}"/>
+                                                                  </center>
+                                                              </div>
+                                                              <div class="modal-footer">
+                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                    {% endfor %}
+                                                  </tbody>
+                                            </table>
+                                            {% else %}
+                                            <center>
+                                            <h5>Ainda não existem eventos cadastrados. :(</h5>
+                                                </center>
+                                          {% endif %}
+                                        </tr>
+                                  </thead>
+                              </table>
+                            </div>
+                      </div>
+                 </div>
+              </div>
+        </div>
+          <footer>
+              {% include 'parciais/_footer.html' %}
+          </footer>
+          <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+          <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+          <script src="{% static 'assets/js/popper.min.js' %}"></script>
+  </body>
+</html>
