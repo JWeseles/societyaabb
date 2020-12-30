@@ -1,0 +1,1 @@
+web: gunicorn societyaabb.wsgi --log-file -
