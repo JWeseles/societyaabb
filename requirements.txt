@@ -1,11 +1,12 @@
 asgiref==3.3.1
 beautifulsoup4==4.9.3
-dj-static==0.0.6
+bootstrap4==0.1.0
 Django==3.1.4
 django-bootstrap4==2.3.1
 django-stdimage==5.1.1
 Pillow==8.0.1
 progressbar2==3.53.1
+psycopg2-binary==2.8.6
 python-utils==2.4.0
 pytz==2020.5
 six==1.15.0
