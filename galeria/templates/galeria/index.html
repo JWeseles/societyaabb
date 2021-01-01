@@ -40,8 +40,7 @@
               <p><h4>Galeria:</h4>
           </center>
               <div class="row">
-                <div class="col-3"></div>
-                  <div class="col-12 col-md-6">
+                  <div class="col-12 col-md-12">
                         <div class="card mt-1 shadow-lg p-3 mb-5 bg-white rounded">
                           <table class="table table-striped">
                               <thead>
@@ -50,21 +49,17 @@
                                 <table class="table">
                                       <thead>
                                         <tr>
-
                                           <th scope="col">Título</th>
                                           <th scope="col">Autor</th>
-
                                           <th scope="col">Data</th>
                                         </tr>
                                       </thead>
                                       <tbody>
                                         {% for foto in imagens %}
                                             <tr>
-
                                                 <td scope="row"><a href="#modal{{foto.id}}" data-toggle="modal">
                                                     {{ foto.titulo }}</a></td>
                                                 <td scope="row">{{ foto.autor }}</td>
-
                                                 <td scope="row"><i class="fa fa-calendar" aria-hidden="true"></i>
                                                     {{ foto.data_criacao }}</td>
                                             </tr>
@@ -75,7 +70,7 @@
                                               <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                   <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">{{ foto.titulo }}</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">{{ foto.titulo }} - {{ foto.autor }}</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                       <span aria-hidden="true">&times;</span>
                                                     </button>
