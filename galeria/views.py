@@ -4,15 +4,26 @@ from django.shortcuts import redirect
 # from .forms import ContatoForm, FotoModelForm
 from .forms import FotoModelForm
 from .models import Foto
+from django.core.paginator import Paginator
 
-
+"""
 def index(request):
     context = {
         'imagens': Foto.objects.all().order_by("autor")
     }
 
     return render(request, 'galeria/index.html', context)
+"""
 
+
+def index(request):
+    imagens = Foto.objects.all().order_by("autor")
+    paginator = Paginator(imagens, 5)
+
+    page = request.GET.get('p')
+    imagens = paginator.get_page(page)
+
+    return render(request, 'galeria/index.html', {'imagens': imagens})
 
 """
 def contato(request):
