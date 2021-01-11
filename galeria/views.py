@@ -11,7 +11,7 @@ def index(request):
     context = {
         'imagens': Foto.objects.all().order_by("autor")
     }
-
+    
     return render(request, 'galeria/index.html', context)
 """
 
@@ -24,6 +24,7 @@ def index(request):
     imagens = paginator.get_page(page)
 
     return render(request, 'galeria/index.html', {'imagens': imagens})
+
 
 """
 def contato(request):

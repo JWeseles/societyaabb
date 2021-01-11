@@ -5,51 +5,48 @@
     <title>Mysite - Detalhe</title>
       {% include 'parciais/_head.html' %}
   </head>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand"><img src="{% static 'polls/images/final20.png' %}" alt="" href="/">da AABB</a>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00509D">
+  <a class="navbar-brand text-white"><img src="{% static 'polls/images/final20.png' %}" alt="" href="/">da AABB</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
 </nav>
-  <br>
   <body style="background-color: #f9f9f9;">
-      <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="container">
           <br>
-              <center>
-              <p><h5>Os atletas mais habilidosos de São Raimundo das Mangabeiras - MA</h5>
-              </center>
+              <center><p><h5>Os atletas mais habilidosos de São Raimundo das Mangabeiras - MA</h5></center>
               <div class="row">
                   <div class="col-3"></div>
                   <div class="col-12 col-md-6">
-                        <div class="card mt-4 shadow-lg p-3 mb-5 bg-white rounded">
-                            <ul>
-                                    <br>
-                                    <p><b>{{ question.question_text }}</b></p>
-                                    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-                                    <form action="{% url 'polls:vote' question.id %}" method="post">
-                                    {% csrf_token %}
-                                    {% for choice in question.choice_set.all %}
-                                        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-                                        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
-                                    {% endfor %}
-                                        <button type="submit" class="btn btn-primary">Votar</button>
-                                    </form>
-                            </ul>
-                            <div class="card-body">
-                            <p class="card-text"></p>
-                            </div>
+                      <ul>
+                          <br>
+                          <p><b>{{ question.question_text }}</b></p>
+                          {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                          <form action="{% url 'polls:vote' question.id %}" method="post">
+                              {% csrf_token %}
+                              {% for choice in question.choice_set.all %}
+                              <input type="radio" name="choice" id="choice{{ forloop.counter }}"
+                                     value="{{ choice.id }}">
+                              <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+                              {% endfor %}
+                              <button type="submit" class="btn btn-outline text-white"
+                                      style="background-color: #FDC500">Votar</button>
+                          </form>
+                      </ul>
+                      <div class="card-body">
+                          <p class="card-text"></p>
                       </div>
                   </div>
               </div>
       </div>
-      <br><br><br><br>
+      <br><br><br><br><br>
       <footer>
           {% include 'parciais/_footer.html' %}
       </footer>

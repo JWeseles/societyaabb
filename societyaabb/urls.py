@@ -21,7 +21,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('polls.urls')),
-    path('blog/', include('blog.urls')),
+    path('summernote/', include('django_summernote.urls')),
+    path('blog/', include('posts.urls')),
     path('admin/', admin.site.urls),
     path('eventos/', include('eventos.urls')),
     path('galeria/', include('galeria.urls')),

@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'categorias.apps.CategoriasConfig',
+    'comentarios.apps.ComentariosConfig',
+    'posts.apps.PostsConfig',
     'eventos.apps.EventosConfig',
     'galeria.apps.GaleriaConfig',
     'polls.apps.PollsConfig',
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'stdimage',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +141,6 @@ MESSAGE_TAGS = {
     constants.SUCCESS: 'alert-success',
     constants.INFO: 'alert-info',
 }
+
+INSTALLED_APPS += ('django_summernote', )
+X_FRAME_OPTIONS = 'SAMEORIGIN'

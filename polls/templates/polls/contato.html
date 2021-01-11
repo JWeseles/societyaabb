@@ -5,56 +5,45 @@
       <title>Mysite - Contato</title>
       {% include 'parciais/_head.html' %}
   </head>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand"><img src="{% static 'polls/images/final20.png' %}" alt="" href="/">da AABB</a>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00509D">
+  <a class="navbar-brand text-white"><img src="{% static 'polls/images/final20.png' %}" alt="" href="/">da AABB</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/videos">Vídeos</a>
+        <a class="nav-link text-white" href="/videos">Vídeos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/eventos">Eventos</a>
+        <a class="nav-link text-white" href="/eventos">Eventos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/galeria">Galeria <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-white" href="/galeria">Galeria <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/blog">Blog</a> <span class="sr-only">(current)</span>
+        <a class="nav-link text-white" href="/blog">Blog</a> <span class="sr-only">(current)</span>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Contato</a> <span class="sr-only">(current)</span>
+        <a class="nav-link text-white" href="#">Contato</a> <span class="sr-only">(current)</span>
       </li>
     </ul>
   </div>
 </nav>
-  <br>
-  <br>
   <body style="background-color: #f9f9f9;">
-  <div class="container shadow-lg p-3 mb-5 bg-white rounded">
-	      <div class="row">
-              <div class="col-3"></div>
-	          <div class="col-12 col-md-6">
-	                <div class="card mt-5 shadow-lg p-3 mb-5 bg-white rounded">
-                      <div class="card-body">
-                          <center>
-                          <h5 class="card-title"><b>Contato para desenvolvimento:</b></h5>
-                          </center>
-                          <br>
-                          <center>
-                          <img class="rounded-circle" src="{% static 'polls/images/perfil2.jpg' %}" alt="Imagem responsiva">
-                          </center>
-
+            <div class="row pt-5">
+                  <div class="col-xl"></div>
+                  <div class="col-xl-8 text-center">
+                      <p><h5>Contato para desenvolvimento:</h5>
+                          <img class="rounded-circle" src="{% static 'polls/images/perfil2.jpg' %}"
+                               alt="Imagem responsiva">
                           <center>
                           <p class="card-text"><b><i>Alves</i></b></p>
                           </center>
 
-                      </div>
                       <ul class="list-group list-group-flush">
                           <li class="list-group-item"><b><i><i class="fa fa-home" aria-hidden="true"></i>
                               Rua dos Lírios nº 09 - Primavera - São Raimundo das Mangabeiras - MA - CEP: 65.840-000</i>
@@ -64,16 +53,16 @@
                           <li class="list-group-item"><b><i><i class="fa fa-whatsapp" aria-hidden="true"></i>
                               (99)98474-7008</i></b></li>
                       </ul>
-                    </div>
-              </div>
-          </div>
-  </div>
-  <br>
-  <footer>
-      {% include 'parciais/_footer.html' %}
-  </footer>
-        <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
-        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'assets/js/popper.min.js' %}"></script>
+
+                  </div>
+              <div class="col-xl"></div>
+            </div>
+            <br><br><br><br>
+        <footer>
+            {% include 'parciais/_footer.html' %}
+        </footer>
+            <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+            <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+            <script src="{% static 'assets/js/popper.min.js' %}"></script>
   </body>
 </html>
