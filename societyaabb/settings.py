@@ -24,7 +24,7 @@ SECRET_KEY = ')3dm=n&+m8(!g8_flh(phq9$lc97wwo4m85k!-if7eck9ze)_*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jweseles.pythonanywhere.com']
 
 # Application definition
 
